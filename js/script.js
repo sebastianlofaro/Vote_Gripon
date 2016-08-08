@@ -17,12 +17,22 @@ window.onscroll = function(e) {
 var videoHeight = $("#video").css("height");
 
 $(document).ready(function() {
-  $("#wrapper").css("margin-top", videoHeight);
+  if (parseInt(videoHeight) < 1000) {
+    $("#wrapper").css("margin-top", videoHeight);
+  }
+  else {
+    $("#wrapper").css("margin-top", "1000px");
+  }
   $("footer").css("display", "none");
 });
 
 $(window).on("resize", function() {
   videoHeight = $("#video").css("height");
-  $("#wrapper").css("margin-top", videoHeight);
+  if (parseInt(videoHeight) < 1000) {
+    $("#wrapper").css("margin-top", videoHeight);
+  }
+  else {
+    $("#wrapper").css("margin-top", "1000px");
+  }
 
 })

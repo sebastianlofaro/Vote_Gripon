@@ -94,6 +94,10 @@ Header Styles
   border-top: 5px solid rgba(34,110,24,1);
 }
 
+.col-3 {
+  margin-top: 75px;
+}
+
 .slug {
   height: 150px;
 }
