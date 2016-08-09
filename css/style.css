@@ -14,6 +14,7 @@ ul {
 .container {
     max-width: 950px;
     margin: 0 auto;
+    padding-top: 95px;
 }
 
 h1 {
@@ -70,6 +71,14 @@ Header Styles
   position: fixed;
   z-index: -10;
   top: 0px;
+}
+
+#down-arrow {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 50px;
+
 }
 
 .columns {

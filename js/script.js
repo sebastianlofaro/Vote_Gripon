@@ -23,7 +23,21 @@ $(document).ready(function() {
   else {
     $("#wrapper").css("margin-top", "1000px");
   }
+  $("#down-arrow").css("top", document.getElementById("wrapper").getBoundingClientRect().top - 70 + "px" );
   $("footer").css("display", "none");
+});
+
+$('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
 });
 
 $(window).on("resize", function() {
@@ -34,5 +48,5 @@ $(window).on("resize", function() {
   else {
     $("#wrapper").css("margin-top", "1000px");
   }
-
-})
+  $("#down-arrow").css("top", document.getElementById("wrapper").getBoundingClientRect().top - 70 + "px" );
+});
