@@ -17,16 +17,33 @@ window.onscroll = function(e) {
 var videoHeight = $("#video").css("height");
 
 $(document).ready(function() {
-  if (parseInt(videoHeight) < 1000) {
-    $("#wrapper").css("margin-top", videoHeight);
+  if (parseInt($("body").css("width")) > 480) {
+    if (parseInt(videoHeight) < 1000) {
+      $("#wrapper").css("margin-top", videoHeight);
+    }
+    else {
+      $("#wrapper").css("margin-top", "1000px");
+    }
+    $("#down-arrow").css("top", document.getElementById("wrapper").getBoundingClientRect().top - 70 + "px" );
+    $("footer").css("display", "none");
   }
-  else {
-    $("#wrapper").css("margin-top", "1000px");
-  }
-  $("footer").css("display", "none");
+});
+
+$('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
 });
 
 $(window).on("resize", function() {
+  
   videoHeight = $("#video").css("height");
   if (parseInt(videoHeight) < 1000) {
     $("#wrapper").css("margin-top", videoHeight);
@@ -34,5 +51,5 @@ $(window).on("resize", function() {
   else {
     $("#wrapper").css("margin-top", "1000px");
   }
-
-})
+  $("#down-arrow").css("top", document.getElementById("wrapper").getBoundingClientRect().top - 70 + "px" );
+});

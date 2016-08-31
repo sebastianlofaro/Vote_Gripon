@@ -28,9 +28,7 @@ Header Styles
 
 .main-header,
 .nav {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -92,11 +90,8 @@ Header Styles
 }
 
 .columns {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-top: 0;
   padding-bottom: 50px;
@@ -203,16 +198,12 @@ i {
 @media (min-width: 480px) {
   .main-header {
     position: fixed;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     padding-bottom: 0;
   }
   .nav {
-    -ms-flex-pack: distribute;
     justify-content: space-around;
-    -ms-flex-direction: row;
     flex-direction: row;
   }
   .nav a {
@@ -220,7 +211,6 @@ i {
     border: none;
   }
   .logo {
-    -ms-flex-item-align: center;
     align-self: center;
     max-width: 150px;
     padding-left: 20px;
